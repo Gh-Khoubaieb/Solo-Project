@@ -13,8 +13,8 @@ return musicLib;
 	//	creating music 
 var jam1 = music("I'm dangerous","The Everlove","Walk Through Fire","Rock");
 var jam2 = music("I Will Rule","The Everlove","Walk Through Fire","Rock");
-var jam3 = music("Another Level","Oh the Larceny","Blood Is Rebel","Alternative/Indie");
-var jam4 = music("Real Good Feeling","Oh the Larceny","Blood Is Rebel","Alternative/Indie");
+var jam3 = music("Another Level","Oh the Larceny","Blood Is Rebel","Indie");
+var jam4 = music("Real Good Feeling","Oh the Larceny","Blood Is Rebel","Indie");
 var jam5 = music("What I've Done","Linkin Park","Minutes To Midnight","Rap rock");
 var jam6 = music("Castle of Glass","Linkin Park","Living Things","Rap rock");
 var jam7 = music("A la Ideal J","Kery James","J'rap encore","Hip-Hop/Rap");
@@ -33,15 +33,16 @@ var allMusic = [jam1, jam2, jam3, jam4, jam5, jam6, jam7, jam8, jam9, jam10, jam
 var a = Math.floor(Math.random() * 5);
 console.log(a);
 
-$('.track1').hide();
+$('#track1').hide();
 $('#track2').hide();
-$('#track3').hide();
-$('#track4').hide();
+$('#track11').hide();
+$('#track22').hide();
 $('#img1').hide();
 $('#indie').hide();
 $('#hiphop').hide();
 $('#Rock').hide();
 $('#Rap').hide();
+
 	 
 
 	 $('.inp1').on('click',function(){
@@ -76,38 +77,50 @@ $('#Rap').hide();
 	  	if ($('.inp4').is(":checked")) {
 			$('#indie').show("slow");
 			$('#img1').show("slow");
-			$('#track4').show("slow");
-			$('#track3').show("slow");
+			$('#track22').show("slow");
+			$('#track11').show("slow");
 			$('#track2').show("slow");
-			$('.track1').show("slow");
+			$('#track1').show("slow");
 			} else 
 			$('#indie').hide("slow");
-			$('#track4').hide();
-			$('#track3').hide();
+			$('#track22').hide();
+			$('#track11').hide();
 			$('#track2').hide();
-			$('.track1').hide();
+			$('#track1').hide();
 
 			});
 
 
 
-
-  $("div #p2").hide();
-     $("#hide2").click(function(){
-     $("div #p2").toggle();
-	});
-
- $("div #p3").hide();
-     $("#hide3").click(function(){
+//indie track
+  $("div #p3").hide();
+     $("#track1").click(function(){
      $("div #p3").toggle();
 	});
 
-  $("div #p4").hide();
-     $("#hide4").click(function(){
-     $("div #p4").toggle();
+ 
+
+	 $("div #p5").hide();
+     $("#track1").click(function(){
+     $("div #p5").toggle();
 	});
 
 
-     $(".tacks").hide();
+     /// Rap tarck
+     $("div #p2").hide();
+     $("#track2").click(function(){
+     $("div #p2").toggle();
+	});
 
+  $("div #p4").hide();
+     $("#track4").click(function(){
+     $("div #p4").toggle();
+	});
+
+     $("div #p4").hide();
+     $("#track3").click(function(){
+     $("div #p4").toggle();
+	});
+
+     $("div #p1").hide();
 });
