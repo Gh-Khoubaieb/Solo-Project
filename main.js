@@ -30,11 +30,84 @@ var jam15 = music("Light em up","Fall Out Boy","Save Rock and Roll","Alternative
 
 //creating an array to hold all music
 var allMusic = [jam1, jam2, jam3, jam4, jam5, jam6, jam7, jam8, jam9, jam10, jam11, jam12, jam13, jam14, jam15];
+var a = Math.floor(Math.random() * 5);
+console.log(a);
+
+$('.track1').hide();
+$('#track2').hide();
+$('#track3').hide();
+$('#track4').hide();
+$('#img1').hide();
+$('#indie').hide();
+$('#hiphop').hide();
+$('#Rock').hide();
+$('#Rap').hide();
+	 
+
+	 $('.inp1').on('click',function(){
+		if ($('.inp1').is(":checked")) {
+			$('#Rap').show("slow");
+			
+		} else 
+			$('#Rap').hide("slow");
+			
+
+	});
+	 	
+	 $('.inp2').click(function(){
+	 	if ($('.inp2').is(":checked")) {
+			$('#Rock').show("slow");
+			
+			} else 
+			$('#Rock').hide("slow");
+			
+			});	 
+		
+	 $('.inp3').click(function(){
+	 	if ($('.inp3').is(":checked")) {
+			$('#hiphop').show("slow");
+			
+			} else 
+			$('#hiphop').hide("slow");
+			
+			});
+
+	  $('.inp4').click(function(){
+	  	if ($('.inp4').is(":checked")) {
+			$('#indie').show("slow");
+			$('#img1').show("slow");
+			$('#track4').show("slow");
+			$('#track3').show("slow");
+			$('#track2').show("slow");
+			$('.track1').show("slow");
+			} else 
+			$('#indie').hide("slow");
+			$('#track4').hide();
+			$('#track3').hide();
+			$('#track2').hide();
+			$('.track1').hide();
+
+			});
 
 
-$('#search').on('click',function(){
-	$('#h1').hide("slow")
-})
 
-	
+
+  $("div #p2").hide();
+     $("#hide2").click(function(){
+     $("div #p2").toggle();
+	});
+
+ $("div #p3").hide();
+     $("#hide3").click(function(){
+     $("div #p3").toggle();
+	});
+
+  $("div #p4").hide();
+     $("#hide4").click(function(){
+     $("div #p4").toggle();
+	});
+
+
+     $(".tacks").hide();
+
 });
