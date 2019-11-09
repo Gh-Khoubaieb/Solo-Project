@@ -1,78 +1,79 @@
 $( document ).ready(function() {
-	   
-	   //create function that make mak music library
-function music(song, singer, album, genre) {
-var musicLib = {};
-musicLib.song = song;
-musicLib.singer = singer;
-musicLib.album = album;
-musicLib.genre = genre
-return musicLib;
-}	
 
-	//	creating music 
-var jam1 = music("I'm dangerous","The Everlove","Walk Through Fire","Rock");
-var jam2 = music("I Will Rule","The Everlove","Walk Through Fire","Rock");
-var jam3 = music("Another Level","Oh the Larceny","Blood Is Rebel","Indie");
-var jam4 = music("Real Good Feeling","Oh the Larceny","Blood Is Rebel","Indie");
-var jam5 = music("What I've Done","Linkin Park","Minutes To Midnight","Rap rock");
-var jam6 = music("Castle of Glass","Linkin Park","Living Things","Rap rock");
-var jam7 = music("A la Ideal J","Kery James","J'rap encore","Hip-Hop/Rap");
-var jam8 = music("Mouhammad Alix","Kery James","Mouhammad Alix","Hip-Hop/Rap");
-var jam9 = music("Mouhammad Alix","Kery James","Mouhammad Alix","Hip-Hop/Rap");
-var jam10 = music("Hokuto Shinken","Psyco-M","Solide","Hip-Hop/Rap");
-var jam11 = music("Tsuki No Me","Psyco-M","Solide","Hip-Hop/Rap");
-var jam12 = music("Legend ","The Score","Atlas","Alternative/Indie");
-var jam13 = music("Unstoppable","The Score","Atlas","Alternative/Indie");
-var jam14 = music("Centuries","Fall Out Boy","American Beauty/American Psycho","Alternative/Indie");
-var jam15 = music("Light em up","Fall Out Boy","Save Rock and Roll","Alternative/Indie");
-
-
-//creating an array to hold all music
-var allMusic = [jam1, jam2, jam3, jam4, jam5, jam6, jam7, jam8, jam9, jam10, jam11, jam12, jam13, jam14, jam15];
-var a = Math.floor(Math.random() * 5);
-console.log(a);
-
+ //hidden all tracks inputs
 $('#track1').hide();
 $('#track2').hide();
+$('#track3').hide();
+$('#track4').hide();
+$('#track5').hide();
+$('#track6').hide();
+$('#track8').hide();
 $('#track11').hide();
 $('#track22').hide();
+$('#track31').hide();
+$('#track32').hide();
+$('#track41').hide();
+$('#track42').hide();
+$('#track52').hide();
 $('#img1').hide();
 $('#indie').hide();
-$('#hiphop').hide();
+$('#RapRock').hide();
 $('#Rock').hide();
 $('#Rap').hide();
 
-	 
-
+	//enable genre Rap on click
 	 $('.inp1').on('click',function(){
 		if ($('.inp1').is(":checked")) {
 			$('#Rap').show("slow");
-			
-		} else 
+			$('#img1').show("slow");
+			$('#track42').show("slow");
+			$('#track41').show("slow");
+			$('#track5').show("slow");
+			$('#track6').show("slow");
+		} else {
 			$('#Rap').hide("slow");
-			
-
+			$('#track42').hide();
+			$('#track41').hide();
+			$('#track5').hide();
+			$('#track6').hide();
+			$("div #p6").hide();
+			$("div #p7").hide();
+		}
 	});
-	 	
+
+//enable genre Rock on click
 	 $('.inp2').click(function(){
 	 	if ($('.inp2').is(":checked")) {
 			$('#Rock').show("slow");
-			
-			} else 
+			$('#img2').show("slow");
+			$('#track32').show("slow");
+			$('#track31').show("slow");
+			$('#track3').show("slow");
+			$('#track4').show("slow");
+		} else {
 			$('#Rock').hide("slow");
+			$('#track32').hide();
+			$('#track31').hide();
+			$('#track3').hide();
+			$('#track4').hide();
+			$("div #p4").hide();
+			$("div #an").hide();
 			
-			});	 
-		
+			}	
+		});
+
+//enable genre Rap Rock on click
 	 $('.inp3').click(function(){
 	 	if ($('.inp3').is(":checked")) {
-			$('#hiphop').show("slow");
-			
-			} else 
-			$('#hiphop').hide("slow");
-			
+			$('#RapRock').show("slow");
+			$('#track8').show();
+		} else {
+			$('#RapRock').hide("slow");
+			$('#track8').hide();
+		}
 			});
 
+//enable genre Indie on click
 	  $('.inp4').click(function(){
 	  	if ($('.inp4').is(":checked")) {
 			$('#indie').show("slow");
@@ -81,24 +82,20 @@ $('#Rap').hide();
 			$('#track11').show("slow");
 			$('#track2').show("slow");
 			$('#track1').show("slow");
-			} else 
+		} else {
 			$('#indie').hide("slow");
 			$('#track22').hide();
 			$('#track11').hide();
 			$('#track2').hide();
 			$('#track1').hide();
-
+			$("div #p2").hide();
+			$("div #p5").hide();
+		}
 			});
 
 
 
-//indie track
-  $("div #p3").hide();
-     $("#track1").click(function(){
-     $("div #p3").toggle();
-	});
-
- 
+//Hide indie lyrics
 
 	 $("div #p5").hide();
      $("#track1").click(function(){
@@ -106,21 +103,46 @@ $('#Rap').hide();
 	});
 
 
-     /// Rap tarck
+     /// Hide Rap lyrics
      $("div #p2").hide();
      $("#track2").click(function(){
      $("div #p2").toggle();
 	});
 
-  $("div #p4").hide();
+
+
+$("div #p6").hide();
+     $("#track6").click(function(){
+     $("div #p6").toggle();
+	});
+
+     ///Hide Rock lyrics
+       $("div #p4").hide();
      $("#track4").click(function(){
      $("div #p4").toggle();
 	});
 
-     $("div #p4").hide();
-     $("#track3").click(function(){
-     $("div #p4").toggle();
+     $("div #an").hide();
+     $("#track31").click(function(){
+     $("div #an").toggle();
 	});
 
-     $("div #p1").hide();
+     
+
+    $("div #p6").hide();
+    $("#track42").click(function(){
+    $("div #p6").toggle();
+	});
+
+	$("div #p7").hide();
+    $("#track5").click(function(){
+    $("div #p7").toggle();
+	});
+
+	//Rap Rock
+	$("div #p8").hide();
+    $("#track8").click(function(){
+    $("div #p8").toggle();
+	});
+
 });
